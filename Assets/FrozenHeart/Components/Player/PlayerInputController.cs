@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInputController : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class PlayerInputController : MonoBehaviour
   private PlayerInput inputActions;
   private PlayerMovement movement;
   public Vector2 MoveInput { get; private set; }
+  public event Action OnInteractPressed;
 
   void Awake()
   {
@@ -19,14 +22,21 @@ public class PlayerInputController : MonoBehaviour
     MoveInput = inputActions.Player.Move.ReadValue<Vector2>();
 
   }
+  public void InteractPressed(InputAction.CallbackContext context)
+  {
+    Debug.Log("tq");
+    OnInteractPressed?.Invoke();
+  }
 
   private void OnEnable()
   {
     inputActions.Player.Enable();
+    inputActions.Player.Interact.performed += InteractPressed;
 
   }
   private void OnDisable()
   {
+    inputActions.Player.Interact.performed -= InteractPressed;
     inputActions.Player.Disable();
   }
 }
