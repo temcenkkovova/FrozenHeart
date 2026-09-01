@@ -24,7 +24,7 @@ public class PlayerInputController : MonoBehaviour
   }
   public void InteractPressed(InputAction.CallbackContext context)
   {
-    Debug.Log("tq");
+
     OnInteractPressed?.Invoke();
   }
 
