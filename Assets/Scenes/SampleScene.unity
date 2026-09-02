@@ -573,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopupManager
   worldPopup: {fileID: 1106739804}
   interactionDetector: {fileID: 1132020011}
+  playerInputController: {fileID: 1132020007}
 --- !u!1 &425201303
 GameObject:
   m_ObjectHideFlags: 0
