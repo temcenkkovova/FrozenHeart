@@ -21,10 +21,11 @@ public class Quest
   }
 
 
-  public void ChangeQuestProgress()
+  public void ChangeQuestProgress(string name)
   {
-    requiredAmount++;
-    OnCurrentAmountChanged.Invoke(requiredAmount);
+    if (name != requiredItemName) return;
+    currentAmount++;
+    OnCurrentAmountChanged.Invoke(currentAmount);
 
     if (currentAmount >= requiredAmount)
     {

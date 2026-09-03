@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Door
   - Wood
+  - Step
+  - EnterHouse
+  - Enter
+  - Bonfire
+  - Evidence
+  - Stair
+  - Story
+  - Dany
+  - Exit
   layers:
   - Default
   - TransparentFX
@@ -14,7 +23,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - QuestItem
   - 
   - 
   - 

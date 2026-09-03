@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour
   public List<QuestConfig> questConfig;
 
   private Quest activeQuest;
-  private int currentQuestCount = 0;
+  public int currentQuestCount { get; private set; } = 0;
 
   void Start()
   {
@@ -19,8 +19,21 @@ public class QuestManager : MonoBehaviour
 
   public void SetQuest()
   {
+    if (currentQuestCount >= questConfig.Count) return;
 
     activeQuest = new Quest(questConfig[currentQuestCount]);
+    activeQuest.OnCompleted += HandleCompleteActiveQuest;
     OnQuestChanged?.Invoke(activeQuest);
+  }
+  public void HandleCompleteActiveQuest(QuestConfig questConfig)
+  {
+    activeQuest.OnCompleted -= HandleCompleteActiveQuest;
+    currentQuestCount++;
+    SetQuest();
+  }
+  public void HandleQuestItemInteract(string name)
+  {
+
+    activeQuest.ChangeQuestProgress(name);
   }
 }

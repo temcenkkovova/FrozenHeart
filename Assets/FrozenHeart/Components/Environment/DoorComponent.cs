@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DoorComponent : MonoBehaviour, IInteractable
@@ -6,6 +7,7 @@ public class DoorComponent : MonoBehaviour, IInteractable
   public bool IsOpen { get; private set; } = false;
   public string InteractableText { get; set; } = "Open";
   public Transform IteractableTransform { get; set; }
+  public event Action OnDestroyObject;
 
   void Awake()
   {
