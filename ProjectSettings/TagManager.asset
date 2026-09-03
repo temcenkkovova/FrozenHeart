@@ -15,6 +15,9 @@ TagManager:
   - Story
   - Dany
   - Exit
+  - FirstFloor
+  - SecondFloor
+  - ThirdFloor
   layers:
   - Default
   - TransparentFX
