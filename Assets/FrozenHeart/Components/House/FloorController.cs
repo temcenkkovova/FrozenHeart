@@ -11,6 +11,9 @@ public class FloorController : MonoBehaviour
   void Start()
   {
     currentFloor = firstFloor;
+    firstFloor.SetActive(true);
+    secondFloor.SetActive(false);
+    thirdFloor.SetActive(false);
   }
   public void ChangeFloor(string floorName)
   {

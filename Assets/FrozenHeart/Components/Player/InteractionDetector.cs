@@ -10,7 +10,7 @@ public class InteractionDetector : MonoBehaviour
   public event Action OnLeaveInteracted;
   void OnTriggerEnter(Collider other)
   {
-
+    Debug.Log(other.name);
     bool isInteractable = (layers.value & (1 << other.gameObject.layer)) != 0;
     if (isInteractable)
     {
