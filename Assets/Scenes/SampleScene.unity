@@ -662,6 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitHouse
   questManager: {fileID: 648079722}
+  freezeController: {fileID: 1191223238}
+  enterHouse: {fileID: 560920635}
 --- !u!1 &54372425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,6 +3429,71 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9549618, y: 1.684806, z: 0.54753137}
   m_Center: {x: 0.013663173, y: -0.73839134, z: -0.41431916}
+--- !u!1001 &290647028
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1951644081}
+    m_Modifications:
+    - target: {fileID: 4920972905828443631, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_Name
+      value: FreezeEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920972905828443631, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.34286
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.95598
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3017502935177372328, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4920972905828443631, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1191223238}
+  m_SourcePrefab: {fileID: 100100000, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
 --- !u!1 &292852797
 GameObject:
   m_ObjectHideFlags: 0
@@ -7859,6 +7926,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7891,7 +7959,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -7977,8 +8045,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3207946, y: -0.12051578, z: 0.0019417142, w: 0.93944824}
-  m_LocalPosition: {x: 7.77, y: 13.85, z: -18.3}
+  m_LocalRotation: {x: -0.4789964, y: -0.029784486, z: 0.015846008, w: -0.87716836}
+  m_LocalPosition: {x: -24.15102, y: 4.6495295, z: -16.859638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8016,6 +8084,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   radius: 0.2
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9044ef733a99ffa4aa7a986bb5e9a7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrostEffect
 --- !u!1 &528889894
 GameObject:
   m_ObjectHideFlags: 0
@@ -8813,6 +8893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnterHouse
   questManager: {fileID: 648079722}
+  freezeController: {fileID: 1191223238}
+  exitHouse: {fileID: 54288444}
 --- !u!1 &565404272
 GameObject:
   m_ObjectHideFlags: 0
@@ -9338,6 +9420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnterHouse
   questManager: {fileID: 648079722}
+  freezeController: {fileID: 0}
+  exitHouse: {fileID: 0}
 --- !u!114 &592595291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12859,7 +12943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &764412449
 Transform:
   m_ObjectHideFlags: 0
@@ -18098,7 +18182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1008264064
 Transform:
   m_ObjectHideFlags: 0
@@ -20142,7 +20226,7 @@ Transform:
   m_GameObject: {fileID: 1132020003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.64, y: 0.553, z: -6.11}
+  m_LocalPosition: {x: -23.98, y: 0.553, z: -14.17}
   m_LocalScale: {x: 0.4, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21031,6 +21115,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraObstacle
   renderers: []
+--- !u!1 &1191223235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4920972905828443631, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+  m_PrefabInstance: {fileID: 290647028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1191223237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5708251947561221663, guid: 6f06c6f543c43df4f91d89e514a350af, type: 3}
+  m_PrefabInstance: {fileID: 290647028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1191223238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191223235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbaa094584a4e34aada197f36a07636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FreezeController
+  material: {fileID: 2100000, guid: 64f4f3342d478f448a9a3638bbef7b26, type: 2}
+  alphaValue: 0
 --- !u!1 &1194554715
 GameObject:
   m_ObjectHideFlags: 0
@@ -24213,6 +24321,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361482800}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1365425302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1365425303}
+  m_Layer: 0
+  m_Name: EnemyVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1365425303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365425302}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2074833326}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376389140
 GameObject:
   m_ObjectHideFlags: 0
@@ -33535,6 +33674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnterHouse
   questManager: {fileID: 648079722}
+  freezeController: {fileID: 0}
+  exitHouse: {fileID: 0}
 --- !u!1 &1883966281
 GameObject:
   m_ObjectHideFlags: 0
@@ -34823,6 +34964,7 @@ Transform:
   - {fileID: 1141277128}
   - {fileID: 155898535}
   - {fileID: 1889126780}
+  - {fileID: 1191223237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1951644082
@@ -38869,6 +39011,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070730423}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2074833325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074833326}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074833326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074833325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.00469, y: 0, z: 6.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1365425303}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076006888
 GameObject:
   m_ObjectHideFlags: 0
@@ -40750,3 +40924,4 @@ SceneRoots:
   - {fileID: 346199165}
   - {fileID: 1878588405}
   - {fileID: 1951644081}
+  - {fileID: 2074833326}
