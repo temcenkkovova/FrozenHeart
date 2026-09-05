@@ -6,6 +6,7 @@ public class ExitHouse : MonoBehaviour
   public QuestManager questManager;
   public FreezeController freezeController;
   public EnterHouse enterHouse;
+  public ColdManager coldManager;
   private bool isExited = false;
   void OnTriggerEnter(Collider other)
   {
@@ -23,7 +24,8 @@ public class ExitHouse : MonoBehaviour
         Debug.Log("You are  leaving too earlier");
       }
       enterHouse.ChangeStatus(false);
-      freezeController.ChangeAlphaValue(0f);
+
+      coldManager.SetInsideHouse(false);
     }
   }
   public void ChangeExitStatus(bool newStatus)

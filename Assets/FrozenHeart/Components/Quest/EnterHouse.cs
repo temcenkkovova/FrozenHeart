@@ -7,6 +7,7 @@ public class EnterHouse : MonoBehaviour
 
   public FreezeController freezeController;
   public ExitHouse exitHouse;
+  public ColdManager coldManager;
   private bool isEntered = false;
   void OnTriggerEnter(Collider other)
   {
@@ -14,7 +15,7 @@ public class EnterHouse : MonoBehaviour
     {
       if (isEntered) return;
       isEntered = true;
-      freezeController.ChangeAlphaValue(0.3f);
+      coldManager.SetInsideHouse(true);
       questManager.HandleQuestItemInteract(gameObject.tag);
       exitHouse.ChangeExitStatus(false);
       // Destroy(gameObject, 1f);

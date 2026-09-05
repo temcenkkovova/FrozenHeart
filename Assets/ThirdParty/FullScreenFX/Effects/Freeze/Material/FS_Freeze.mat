@@ -71,7 +71,7 @@ Material:
     - _Mask_Noise: 0.7
     - _Mask_Size: 0.45
     - _PulseSpeed: 3
-    - _Pulse_Speed: 2
+    - _Pulse_Speed: 0
     - _enabled: 1
     m_Colors:
     - _Color: {r: 0.30502644, g: 0.515772, b: 1.0592737, a: 0}

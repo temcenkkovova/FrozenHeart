@@ -148,6 +148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2074833326}
   - {fileID: 2057618791}
   m_Father: {fileID: 1951644081}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -664,6 +665,7 @@ MonoBehaviour:
   questManager: {fileID: 648079722}
   freezeController: {fileID: 1191223238}
   enterHouse: {fileID: 560920635}
+  coldManager: {fileID: 648079724}
 --- !u!1 &54372425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4373,6 +4375,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1458292178}
   - {fileID: 1008264064}
   m_Father: {fileID: 1951644081}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5306,6 +5309,38 @@ MonoBehaviour:
   requiredAmountField: {fileID: 3497535}
   currentAmountField: {fileID: 955572981}
   questManager: {fileID: 648079722}
+--- !u!1 &416988930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416988931}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416988931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416988930}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.66, y: 0, z: 4.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1536496413}
+  m_Father: {fileID: 1942146740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417657219
 GameObject:
   m_ObjectHideFlags: 0
@@ -8895,6 +8930,7 @@ MonoBehaviour:
   questManager: {fileID: 648079722}
   freezeController: {fileID: 1191223238}
   exitHouse: {fileID: 54288444}
+  coldManager: {fileID: 648079724}
 --- !u!1 &565404272
 GameObject:
   m_ObjectHideFlags: 0
@@ -9422,6 +9458,7 @@ MonoBehaviour:
   questManager: {fileID: 648079722}
   freezeController: {fileID: 0}
   exitHouse: {fileID: 0}
+  coldManager: {fileID: 0}
 --- !u!114 &592595291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10359,6 +10396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648079723}
   - component: {fileID: 648079722}
+  - component: {fileID: 648079724}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -10403,6 +10441,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &648079724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648079721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca695d14b5e14f64191af9ba754f50e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColdManager
+  enemyTr: {fileID: 2074833326}
+  playerTr: {fileID: 1132020005}
+  distanceBetween: 3
+  freezeController: {fileID: 1191223238}
 --- !u!1 &649962543
 GameObject:
   m_ObjectHideFlags: 0
@@ -12943,7 +12997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &764412449
 Transform:
   m_ObjectHideFlags: 0
@@ -14718,6 +14772,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843296144}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &844000881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844000882}
+  m_Layer: 0
+  m_Name: EnemyVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &844000882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844000881}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1458292178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845170714
 GameObject:
   m_ObjectHideFlags: 0
@@ -21139,6 +21224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FreezeController
   material: {fileID: 2100000, guid: 64f4f3342d478f448a9a3638bbef7b26, type: 2}
   alphaValue: 0
+  fadeDuration: 2
 --- !u!1 &1194554715
 GameObject:
   m_ObjectHideFlags: 0
@@ -25741,6 +25827,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraObstacle
   renderers: []
+--- !u!1 &1458292177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458292178}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1458292178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458292177}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.08, y: 0, z: -0.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 844000882}
+  m_Father: {fileID: 339313399}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459040982
 GameObject:
   m_ObjectHideFlags: 0
@@ -28032,6 +28150,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528666345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1536496412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1536496413}
+  m_Layer: 0
+  m_Name: EnemyVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1536496413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536496412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 416988931}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539668257
 GameObject:
   m_ObjectHideFlags: 0
@@ -33676,6 +33825,7 @@ MonoBehaviour:
   questManager: {fileID: 648079722}
   freezeController: {fileID: 0}
   exitHouse: {fileID: 0}
+  coldManager: {fileID: 0}
 --- !u!1 &1883966281
 GameObject:
   m_ObjectHideFlags: 0
@@ -34562,6 +34712,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 416988931}
   - {fileID: 764412449}
   m_Father: {fileID: 1951644081}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38473,7 +38624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2057618791
 Transform:
   m_ObjectHideFlags: 0
@@ -39035,13 +39186,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074833325}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.00469, y: 0, z: 6.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.08, y: 0, z: -0.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1365425303}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2822511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076006888
 GameObject:
@@ -40924,4 +41075,3 @@ SceneRoots:
   - {fileID: 346199165}
   - {fileID: 1878588405}
   - {fileID: 1951644081}
-  - {fileID: 2074833326}
