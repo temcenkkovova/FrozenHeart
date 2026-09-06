@@ -18,6 +18,7 @@ TagManager:
   - FirstFloor
   - SecondFloor
   - ThirdFloor
+  - Key
   layers:
   - Default
   - TransparentFX
