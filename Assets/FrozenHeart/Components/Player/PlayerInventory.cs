@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-  public List<InventoryItem> inventoryItems;
+  public List<InventoryItem> inventoryItems = new List<InventoryItem>();
   public bool HasKey()
   {
     bool key = false;
@@ -22,7 +22,9 @@ public class PlayerInventory : MonoBehaviour
 
   public void AddKey()
   {
-    inventoryItems.Add(new InventoryItem("Key"));
+    InventoryItem item = new InventoryItem("Key");
+    inventoryItems.Add(item);
+    Debug.Log(inventoryItems[0].nameItem);
   }
 
   public void RemoveKey()

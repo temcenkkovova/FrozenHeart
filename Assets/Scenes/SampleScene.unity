@@ -299,7 +299,6 @@ GameObject:
   m_Component:
   - component: {fileID: 16848082}
   - component: {fileID: 16848083}
-  - component: {fileID: 16848084}
   - component: {fileID: 16848085}
   m_Layer: 7
   m_Name: Key
@@ -343,21 +342,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &16848084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16848081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb497f5bb7f7c94595e850e31b9f954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestItem
-  questManager: {fileID: 648079722}
+  m_Radius: 0.9437616
+  m_Center: {x: 0, y: 0, z: -0.10565591}
 --- !u!114 &16848085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8175,8 +8161,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.4789964, y: -0.029784486, z: 0.015846008, w: -0.87716836}
-  m_LocalPosition: {x: -24.15102, y: 4.6495295, z: -16.859638}
+  m_LocalRotation: {x: 0.5105265, y: -0.004843522, z: 0.003304546, w: 0.8598421}
+  m_LocalPosition: {x: 1.0375786, y: 6.096083, z: -8.967097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20503,7 +20489,7 @@ Transform:
   m_GameObject: {fileID: 1132020003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.98, y: 0.553, z: -14.17}
+  m_LocalPosition: {x: 1.463, y: 0.553, z: -6.862}
   m_LocalScale: {x: 0.4, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

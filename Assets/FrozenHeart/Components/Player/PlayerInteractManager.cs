@@ -24,7 +24,11 @@ public class PlayerInteractManager : MonoBehaviour
   private void HandleInteract()
   {
     if (interactionDetector.CurrentInteractable != null)
+    {
+
       interactionDetector.CurrentInteractable.Interact();
+    }
+
 
 
   }
