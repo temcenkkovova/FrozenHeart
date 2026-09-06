@@ -1,17 +1,20 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
   public List<InventoryItem> inventoryItems = new List<InventoryItem>();
+  public event Action<int> OnInventoryChanged;
+  private int inventoryCount = 0;
   public bool HasKey()
   {
     bool key = false;
     if (inventoryItems == null) return false;
     foreach (var item in inventoryItems)
     {
-      Debug.Log(item.nameItem);
+
       key = item.nameItem == "Key";
     }
 
@@ -24,11 +27,15 @@ public class PlayerInventory : MonoBehaviour
   {
     InventoryItem item = new InventoryItem("Key");
     inventoryItems.Add(item);
-    Debug.Log(inventoryItems[0].nameItem);
+    inventoryCount++;
+    OnInventoryChanged(inventoryCount);
+
   }
 
   public void RemoveKey()
   {
     inventoryItems.RemoveRange(0, 1);
+    inventoryCount--;
+    OnInventoryChanged(inventoryCount);
   }
 }

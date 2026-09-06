@@ -43,6 +43,7 @@ public class DoorComponent : MonoBehaviour, IInteractable
       if (playerInventory.HasKey())
       {
         UnlockedDoor();
+        playerInventory.RemoveKey();
       }
       else
       {
