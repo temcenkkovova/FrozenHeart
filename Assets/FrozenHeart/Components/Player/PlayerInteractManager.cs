@@ -19,20 +19,22 @@ public class PlayerInteractManager : MonoBehaviour
 
   void Start()
   {
-    playerInputController.OnInteractPressed += HandleInteract;
+    // playerInputController.OnInteractPressed += HandleInteract;
   }
   private void HandleInteract()
   {
+    Debug.Log("tt");
     if (interactionDetector.CurrentInteractable != null)
     {
-
+      Debug.Log("hjere");
       interactionDetector.CurrentInteractable.Interact();
     }
-
-
-
   }
 
+  void OnEnable()
+  {
+    playerInputController.OnInteractPressed += HandleInteract;
+  }
   void OnDisable()
   {
     playerInputController.OnInteractPressed -= HandleInteract;

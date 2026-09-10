@@ -24,18 +24,20 @@ public class PlayerInputController : MonoBehaviour
   }
   public void InteractPressed(InputAction.CallbackContext context)
   {
-
+    Debug.Log("sa");
     OnInteractPressed?.Invoke();
   }
 
   private void OnEnable()
   {
+    Debug.Log("enable");
     inputActions.Player.Enable();
     inputActions.Player.Interact.performed += InteractPressed;
 
   }
   private void OnDisable()
   {
+    Debug.Log("disable");
     inputActions.Player.Interact.performed -= InteractPressed;
     inputActions.Player.Disable();
   }

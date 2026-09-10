@@ -16,11 +16,12 @@ public class InteractionDetector : MonoBehaviour
     {
 
       IInteractable interactable = other.GetComponent<IInteractable>();
-      interactable.OnDestroyObject += HandleDestroyObject;
-      if (interactable == CurrentInteractable) return;
-      if (interactable == null) return;
+
+      if (interactable == CurrentInteractable || interactable == null) return;
+      ClearCurrent();
       CurrentInteractable = interactable;
-      OnInteracted?.Invoke(interactable);
+      CurrentInteractable.OnDestroyObject += HandleDestroyObject;
+      OnInteracted?.Invoke(CurrentInteractable);
 
     }
   }
@@ -28,17 +29,21 @@ public class InteractionDetector : MonoBehaviour
   void OnTriggerExit(Collider other)
   {
 
-    bool isInteractable = (layers.value & (1 << other.gameObject.layer)) != 0;
-    if (isInteractable)
-    {
-      IInteractable interactable = other.GetComponent<IInteractable>();
-      interactable.OnDestroyObject -= HandleDestroyObject;
-      if (interactable == CurrentInteractable)
-        CurrentInteractable = null;
-      OnLeaveInteracted?.Invoke();
-    }
+    IInteractable interactable = other.GetComponent<IInteractable>();
+    if (interactable == null || interactable != CurrentInteractable)
+      return;
+    ClearCurrent();
 
 
+  }
+  private void ClearCurrent()
+  {
+    if (CurrentInteractable == null)
+      return;
+
+    CurrentInteractable.OnDestroyObject -= HandleDestroyObject;
+    CurrentInteractable = null;
+    OnLeaveInteracted?.Invoke();
   }
   public void HandleDestroyObject()
   {

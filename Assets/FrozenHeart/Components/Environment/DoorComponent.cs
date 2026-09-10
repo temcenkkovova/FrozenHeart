@@ -4,7 +4,7 @@ using UnityEngine;
 public class DoorComponent : MonoBehaviour, IInteractable
 {
   public Transform doorPivot;
-  public bool IsOpen { get; private set; } = false;
+  public bool IsOpen { get; private set; }
   public string InteractableText { get; set; } = "Open";
   public Transform IteractableTransform { get; set; }
   public event Action OnDestroyObject;
@@ -17,7 +17,7 @@ public class DoorComponent : MonoBehaviour, IInteractable
   }
   void Start()
   {
-
+    IsOpen = false;
   }
 
   public void UnlockedDoor()
@@ -38,6 +38,7 @@ public class DoorComponent : MonoBehaviour, IInteractable
   }
   public void Interact()
   {
+
     if (IsLocked)
     {
       if (playerInventory.HasKey())
@@ -53,6 +54,7 @@ public class DoorComponent : MonoBehaviour, IInteractable
 
     if (!IsLocked)
     {
+
       OpenDoor();
     }
   }
@@ -67,18 +69,29 @@ public class DoorComponent : MonoBehaviour, IInteractable
     {
       if (IsOpen)
       {
+        Debug.Log("yyy");
         doorPivot.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
         IsOpen = false;
         InteractableText = "Open";
       }
       else
       {
+        Debug.Log("qqqq");
         doorPivot.transform.localRotation = Quaternion.Euler(0f, -90f, 90f);
         IsOpen = true;
         InteractableText = "Close";
       }
     }
 
+
+  }
+
+  void OnEnable()
+  {
+
+  }
+  void OnDisable()
+  {
 
   }
 }
