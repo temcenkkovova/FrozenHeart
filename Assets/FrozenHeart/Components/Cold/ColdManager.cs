@@ -26,7 +26,7 @@ public class ColdManager : MonoBehaviour
   }
   private void UpdateAlpha()
   {
-    Vector3 distance = enemyTr.position - playerTr.position;
+    Vector3 distance = new Vector3(enemyTr.position.x, 0f, enemyTr.position.z) - new Vector3(playerTr.position.x, 0f, playerTr.position.z);
     bool isNear = distance.sqrMagnitude
                   <= distanceBetween * distanceBetween;
 

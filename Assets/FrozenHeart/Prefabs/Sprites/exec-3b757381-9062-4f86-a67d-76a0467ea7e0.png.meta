@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 0c3368d2503847a40bce421339334f8f
+guid: a54b3b239422f2d48b83d530b9103e05
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3711759219541486078
-    second: exec-bd3c0d5a-449a-4fa2-ba75-32dcc4473eac_0
-  - first:
-      213: -8412277200322522115
-    second: exec-bd3c0d5a-449a-4fa2-ba75-32dcc4473eac_1
+      213: -6554826147512479731
+    second: exec-3b757381-9062-4f86-a67d-76a0467ea7e0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: exec-bd3c0d5a-449a-4fa2-ba75-32dcc4473eac_0
+      name: exec-3b757381-9062-4f86-a67d-76a0467ea7e0_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 13
-        width: 1156
-        height: 1241
+        x: 127
+        y: 63
+        width: 1917
+        height: 559
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 206d273d7ae2d7cc0800000000000000
-      internalID: -3711759219541486078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: exec-bd3c0d5a-449a-4fa2-ba75-32dcc4473eac_1
-      rect:
-        serializedVersion: 2
-        x: 1164
-        y: 625
-        width: 14
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df398aad476914b80800000000000000
-      internalID: -8412277200322522115
+      spriteID: d00931909549805a0800000000000000
+      internalID: -6554826147512479731
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      exec-bd3c0d5a-449a-4fa2-ba75-32dcc4473eac_0: -3711759219541486078
-      exec-bd3c0d5a-449a-4fa2-ba75-32dcc4473eac_1: -8412277200322522115
+      exec-3b757381-9062-4f86-a67d-76a0467ea7e0_0: -6554826147512479731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
