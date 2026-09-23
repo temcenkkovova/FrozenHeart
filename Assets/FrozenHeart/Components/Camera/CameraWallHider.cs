@@ -44,18 +44,19 @@ public class CameraWallHider : MonoBehaviour
       }
     }
 
-    // Возвращаем стены, которые больше не мешают.
+    // Return to start state
     foreach (CameraObstacle obstacle in hidden)
     {
       if (obstacle != null && !detected.Contains(obstacle))
         obstacle.Restore();
     }
 
-    // Скрываем стены между камерой и героем.
+    // Hide the object between camera and player
     foreach (CameraObstacle obstacle in detected)
       obstacle.Hide();
 
-    // Переиспользуем наборы на следующем кадре.
+
+    // Swap objects between detected and hidden to return object to start state. Without this code the object will not return to start state even player far away
     (hidden, detected) = (detected, hidden);
   }
 
