@@ -59075,6 +59075,7 @@ GameObject:
   - component: {fileID: 1132020011}
   - component: {fileID: 1132020013}
   - component: {fileID: 1132020014}
+  - component: {fileID: 1132020015}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -59284,6 +59285,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9396cd51bc9baa145900c378d0b288e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+--- !u!114 &1132020015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132020003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46c396fe40d26644877cefc7ff43346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRotation
+  rotateSpeed: 5
 --- !u!1 &1132076196
 GameObject:
   m_ObjectHideFlags: 0
@@ -96535,13 +96549,13 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 5
   m_Range: 10
-  m_SpotAngle: 30
+  m_SpotAngle: 41.288292
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -98838,6 +98852,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4764365532196611777, guid: 66e773e0b7b716649b6ed89ad51b2058, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296314119655459058, guid: 66e773e0b7b716649b6ed89ad51b2058, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

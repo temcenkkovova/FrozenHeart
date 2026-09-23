@@ -9,6 +9,7 @@ public class PlayerInputController : MonoBehaviour
   private PlayerMovement movement;
   public Vector2 MoveInput { get; private set; }
   public event Action OnInteractPressed;
+  public Vector2 MousePosition { get; private set; }
 
   void Awake()
   {
@@ -20,6 +21,7 @@ public class PlayerInputController : MonoBehaviour
   {
     if (movement == null || inputActions == null) return;
     MoveInput = inputActions.Player.Move.ReadValue<Vector2>();
+    MousePosition = Mouse.current.position.ReadValue();
 
   }
   public void InteractPressed(InputAction.CallbackContext context)

@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     if (blocked)
     {
-      // Останавливаем ходьбу, но сохраняем гравитацию.
+      // Stop movement but save gravity
       Vector3 velocity = rb.linearVelocity;
       rb.linearVelocity = new Vector3(0f, velocity.y, 0f);
     }
