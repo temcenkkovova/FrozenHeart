@@ -6,4 +6,5 @@ public class QuestConfig : ScriptableObject
   public string title;
   public string requiredItem;
   public int requiredAmount;
+  public int id;
 }

@@ -9,6 +9,8 @@ public class QuestManager : MonoBehaviour
 
   public List<QuestConfig> questConfig;
 
+  public event Action OnShowHiddenQuest;
+
   private Quest activeQuest;
   public int currentQuestCount { get; private set; } = 0;
 
@@ -23,7 +25,15 @@ public class QuestManager : MonoBehaviour
 
     activeQuest = new Quest(questConfig[currentQuestCount]);
     activeQuest.OnCompleted += HandleCompleteActiveQuest;
+    if (questConfig[currentQuestCount].id == 2)
+    {
+      OnShowHiddenQuest?.Invoke();
+    }
+
+
     OnQuestChanged?.Invoke(activeQuest);
+
+
   }
   public void HandleCompleteActiveQuest(QuestConfig questConfig)
   {
