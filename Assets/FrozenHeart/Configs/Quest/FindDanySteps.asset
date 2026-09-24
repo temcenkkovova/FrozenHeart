@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestConfig
   title: Find Dany`s steps in the dark forest
   requiredItem: Step
-  requiredAmount: 3
+  requiredAmount: 4
   id: 2

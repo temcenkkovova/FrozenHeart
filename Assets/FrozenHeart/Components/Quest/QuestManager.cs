@@ -46,4 +46,9 @@ public class QuestManager : MonoBehaviour
 
     activeQuest.ChangeQuestProgress(name);
   }
+
+  public bool CheckCurrentQuest(string tag)
+  {
+    return questConfig[currentQuestCount].requiredItem == tag;
+  }
 }

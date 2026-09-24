@@ -4,32 +4,31 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Door
-  - Wood
-  - Step
-  - EnterHouse
-  - Enter
-  - Bonfire
-  - Evidence
-  - Stair
-  - Story
-  - Dany
-  - Exit
-  - FirstFloor
-  - SecondFloor
-  - ThirdFloor
   - Key
+  - SecondFloor
+  - Door
+  - Step
+  - Exit
+  - Wood
+  - Story
+  - Stair
+  - FirstFloor
+  - Enter
+  - Evidence
+  - ThirdFloor
+  - Dany
+  - Bonfire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Door
+  - 
   - Water
   - UI
-  - Player
-  - QuestItem
   - CameraObstacle
-  - 
+  - QuestItem
+  - Key
+  - Door
   - 
   - 
   - 
@@ -58,3 +57,10 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - Light Layer 1
+  - Light Layer 2
+  - Light Layer 3
+  - Light Layer 4
+  - Light Layer 5
+  - Light Layer 6
+  - Light Layer 7

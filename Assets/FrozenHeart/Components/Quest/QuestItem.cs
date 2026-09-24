@@ -16,6 +16,7 @@ public class QuestItem : MonoBehaviour, IInteractable
 
   public void Interact()
   {
+    if (!questManager.CheckCurrentQuest(gameObject.tag)) return;
     questManager.HandleQuestItemInteract(gameObject.tag);
     StartCoroutine(destroyCoroutine());
   }
