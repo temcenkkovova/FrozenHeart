@@ -6,49 +6,45 @@ public class PlayerMovement : MonoBehaviour
   private PlayerInputController playerInput;
   private Rigidbody rb;
 
-  private Vector3 movement;
+
 
   public bool MovementBlocked { get; private set; }
   void Awake()
   {
     playerInput = GetComponent<PlayerInputController>();
     rb = GetComponent<Rigidbody>();
-  }
-  void Update()
-  {
-    if (MovementBlocked)
-    {
-      movement = Vector3.zero;
-      return;
-    }
-    float horizontal = playerInput.MoveInput.x;
-    float vertical = playerInput.MoveInput.y;
 
-    movement = new Vector3(horizontal, 0f, vertical).normalized;
   }
+
 
   void FixedUpdate()
   {
-    Vector3 velocity = rb.linearVelocity;
-    Vector3 direction = MovementBlocked ? Vector3.zero : movement;
+    Vector3 currentVelocity = rb.linearVelocity;
+    Vector3 horizontalVelocity = Vector3.zero;
+    if (playerInput.isMoving && !MovementBlocked)
+    {
+      horizontalVelocity = transform.forward * speed;
+    }
 
-    rb.linearVelocity = new Vector3(direction.x * speed, velocity.y, direction.z * speed);
+    rb.linearVelocity = new Vector3(horizontalVelocity.x, currentVelocity.y, horizontalVelocity.z);
+
   }
+
   public void SetMovementBlocked(bool blocked)
   {
     MovementBlocked = blocked;
-    movement = Vector3.zero;
+
 
     if (blocked)
     {
-      // Stop movement but save gravity
+
       Vector3 velocity = rb.linearVelocity;
       rb.linearVelocity = new Vector3(0f, velocity.y, 0f);
     }
   }
   public void Teleport(Vector3 position)
   {
-    movement = Vector3.zero;
+
     rb.linearVelocity = Vector3.zero;
     rb.angularVelocity = Vector3.zero;
     rb.position = position;
@@ -57,5 +53,11 @@ public class PlayerMovement : MonoBehaviour
   public void Init(float speed)
   {
     this.speed = speed;
+  }
+
+  void OnDisable()
+  {
+    if (!playerInput) return;
+
   }
 }

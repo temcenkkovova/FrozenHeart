@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
-  public float rotateSpeed = 5f;
+  public float rotateSpeed = 3f;
 
   private PlayerInputController playerInputController;
+  public Quaternion targetRotation;
+  [SerializeField] private LayerMask groundMask;
   void Awake()
   {
     playerInputController = GetComponent<PlayerInputController>();
   }
 
-  void Update()
+  void FixedUpdate()
   {
     RotateByMouse(playerInputController.MousePosition);
   }
@@ -18,9 +20,7 @@ public class PlayerRotation : MonoBehaviour
   {
     Vector3 mouseDir = new Vector3();
     Ray ray = Camera.main.ScreenPointToRay(input);
-    Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-
-
+    Plane groundPlane = new Plane(Vector3.up, transform.position);
     if (groundPlane.Raycast(ray, out float distance))
     {
       Vector3 mouseWorldPos = ray.GetPoint(distance);
@@ -33,7 +33,7 @@ public class PlayerRotation : MonoBehaviour
 
     mouseDir.Normalize();
 
-    Quaternion targetRotation = Quaternion.LookRotation(mouseDir);
+    targetRotation = Quaternion.LookRotation(mouseDir);
     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
   }
 }

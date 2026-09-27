@@ -9,7 +9,10 @@ public class PlayerInputController : MonoBehaviour
   private PlayerMovement movement;
   public Vector2 MoveInput { get; private set; }
   public event Action OnInteractPressed;
+  public event Action<bool> OnMoveChanged;
   public Vector2 MousePosition { get; private set; }
+
+  public bool isMoving = false;
 
   void Awake()
   {
@@ -20,27 +23,36 @@ public class PlayerInputController : MonoBehaviour
   void Update()
   {
     if (movement == null || inputActions == null) return;
-    MoveInput = inputActions.Player.Move.ReadValue<Vector2>();
+    //MoveInput = inputActions.Player.Move.ReadValue<Vector2>();
     MousePosition = Mouse.current.position.ReadValue();
 
   }
   public void InteractPressed(InputAction.CallbackContext context)
   {
-    Debug.Log("sa");
+
     OnInteractPressed?.Invoke();
   }
+  public void MoveChanged(InputAction.CallbackContext context)
+  {
+    isMoving = !context.canceled;
+  }
+
 
   private void OnEnable()
   {
-    Debug.Log("enable");
+
     inputActions.Player.Enable();
     inputActions.Player.Interact.performed += InteractPressed;
+    inputActions.Player.Move.started += MoveChanged;
+    inputActions.Player.Move.canceled += MoveChanged;
 
   }
   private void OnDisable()
   {
-    Debug.Log("disable");
+
     inputActions.Player.Interact.performed -= InteractPressed;
+    inputActions.Player.Move.started -= MoveChanged;
+    inputActions.Player.Move.canceled -= MoveChanged;
     inputActions.Player.Disable();
   }
 }
